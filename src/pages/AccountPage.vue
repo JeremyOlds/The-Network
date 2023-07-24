@@ -3,7 +3,7 @@
     <div>
       <img class="img-fluid cover-image" :src="account.coverImg" alt="">
     </div>
-    <h1>Welcome {{ account.name }} {{ account.graduated }}</h1>
+    <h1>Welcome {{ account.name }} <span v-if="account.graduated == true"><i class="mdi mdi-school"></i></span></h1>
     <img class="rounded" :src="account.picture" alt="" />
     <p>{{ account.email }}</p>
   </div>
