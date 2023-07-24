@@ -1,18 +1,21 @@
 <template>
   <div class="about text-center">
-    <h1>Welcome {{ account.name }}</h1>
+    <div>
+      <img class="img-fluid cover-image" :src="account.coverImg" alt="">
+    </div>
+    <h1>Welcome {{ account.name }} {{ account.graduated }}</h1>
     <img class="rounded" :src="account.picture" alt="" />
     <p>{{ account.email }}</p>
   </div>
   <div class="container-fluid">
     <div class="row">
       <div class="col-10 m-auto elevation-5 my-3 shadow rounded bg-light">
-        <div class="">
-          <span>{{ account.email }}</span>
+        <div class="d-flex flex-column">
           <span>{{ account.class }}</span>
           <span>{{ account.github }}</span>
           <span>{{ account.linkedin }}</span>
           <span>{{ account.resume }}</span>
+          <span>{{ account.bio }}</span>
         </div>
       </div>
       <div class="col-10 m-auto elevation-5 my-3 shadow rounded bg-info">
@@ -107,6 +110,11 @@ export default {
 <style scoped>
 img {
   max-width: 100px;
+}
+
+.cover-image {
+  height: 20vh;
+  width: 100%;
 }
 
 .input {
