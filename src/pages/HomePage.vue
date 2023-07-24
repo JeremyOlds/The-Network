@@ -3,7 +3,9 @@
     <div class="row">
       <!-- SECTION Potential Profile snippet -->
       <div class="col-2">
-
+        <div v-for="ad in ads" :key="ad.title">
+          <AdComponent :ad="ad" />
+        </div>
       </div>
       <!-- SECTION post form and posts -->
       <div class="col-8 m-auto">
@@ -11,6 +13,9 @@
           <!-- STUB post form -->
           <div v-if="account.id" class="col-12 py-3 my-3 elevation-4 shadow rounded bg-light d-flex ">
             <FormComponent />
+          </div>
+          <div class="col-12 py-3 my-3 elevation-4 shadow rounded bg-light d-flex justify-content-center">
+            <SearchBarComponent />
           </div>
 
           <!-- STUB Looped posts -->
@@ -44,6 +49,8 @@ import PostComponent from "../components/PostComponent.vue";
 import FormComponent from "../components/FormComponent.vue";
 import AdComponent from "../components/AdComponent.vue";
 import PageChangeComponent from "../components/PageChangeComponent.vue";
+import SearchBarComponent from "../components/SearchBarComponent.vue";
+
 
 
 
@@ -71,7 +78,7 @@ export default {
 
     };
   },
-  components: { PostComponent, FormComponent, AdComponent, PageChangeComponent }
+  components: { PostComponent, FormComponent, AdComponent, PageChangeComponent, SearchBarComponent }
 }
 </script>
 

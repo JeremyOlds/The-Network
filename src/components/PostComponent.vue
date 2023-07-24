@@ -51,7 +51,9 @@ export default {
   },
   setup(props) {
     return {
+
       account: computed(() => AppState.account),
+
       async deletePost() {
         try {
           const wantsToRemovePost = await Pop.confirm("are you sure you want to delete this post?");
@@ -65,6 +67,7 @@ export default {
           Pop.error(error.message);
         }
       },
+
       async likePost() {
         try {
           const accountId = AppState.account.id

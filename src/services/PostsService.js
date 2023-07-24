@@ -47,6 +47,35 @@ class PostsService {
     AppState.older = res.data.older
 
   }
+  async getPostsByUser(creatorId) {
+    const res = await api.get(`api/profiles/${creatorId}/posts`)
+    logger.log("get posts by user", res.data)
+    const posts = res.data.posts.map(p => new Post(p))
+    AppState.posts = posts
+    AppState.newer = res.data.newer
+    AppState.older = res.data.older
+    logger.log('appstate posts', AppState.posts)
+  }
+  async getPostsByQuery(search) {
+    if (AppState.activeProfile.id) {
+      const res = await api.get(`api/posts?query=${search.query}`)
+      logger.log('posts by search profile query', res.data)
+      const properPosts = res.data.posts.filter(p => p.creatorId == AppState.activeProfile.id)
+      const posts = properPosts.map(p => new Post(p))
+      AppState.posts = posts
+      AppState.newer = res.data.newer
+      AppState.older = res.data.older
+      logger.log('appstate posts', AppState.posts)
+    } else {
+      const res = await api.get(`api/posts?query=${search.query}`)
+      logger.log('posts by search query', res.data)
+      const posts = res.data.posts.map(p => new Post(p))
+      AppState.posts = posts
+      AppState.newer = res.data.newer
+      AppState.older = res.data.older
+      logger.log('appstate posts', AppState.posts)
+    }
+  }
 }
 
 export const postsService = new PostsService()
