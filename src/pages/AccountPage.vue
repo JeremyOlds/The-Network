@@ -11,6 +11,7 @@
     <div class="row">
       <div class="col-10 m-auto elevation-5 my-3 shadow rounded bg-light">
         <div class="d-flex flex-column">
+
           <span>{{ account.class }}</span>
           <span>{{ account.github }}</span>
           <span>{{ account.linkedin }}</span>
