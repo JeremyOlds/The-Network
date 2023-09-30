@@ -6,4 +6,3 @@ The network is a social media website designed for users to be able to create ac
 - Creating posts on the website
 - Liking users Posts
 
-
