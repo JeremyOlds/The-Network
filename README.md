@@ -1,16 +1,9 @@
-CodeWorks Vue Starter
-=====================
-This template is designed to help get students started building vue applications
+# The Network
 
-## Legal Overview
+The network is a social media website designed for users to be able to create accounts, posts, and likes.
 
-The content under the CodeWorks®, LLC Organization and all of the individual repos are solely intended for use by CodeWorks Instruction to deliver Educational content to CodeWorks Students.
-
----
-
-## Copyright
-
-© CodeWorks® LLC, 2021. Unauthorized use and/or duplication of this material without express and written permission from CodeWorks, LLC is strictly prohibited.
+- Creating and customizing accounts
+- Creating posts on the website
+- Liking users Posts
 
 
-<img src="https://bcw.blob.core.windows.net/public/img/7815839041305055" width="125">
